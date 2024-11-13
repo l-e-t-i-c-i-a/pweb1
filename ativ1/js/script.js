@@ -1,15 +1,11 @@
+// Lista de usuários (inicial)
 const usuarios = [
     { nome: 'Ana', idade: 25, cpf: '123.456.789-00' },
     { nome: 'Carla', idade: 30, cpf: '987.654.321-11' },
     { nome: 'Trísia', idade: 22, cpf: '456.123.789-22' }
 ];
 
-const listaUsuariosElement = document.createElement('ul');
-document.body.appendChild(listaUsuariosElement);
-
-for (let usuario of usuarios) {
-    inserirUsuarioNaLista(usuario);
-}
+const listaUsuariosElement = document.getElementById('listaUsuarios');
 
 // Função para inserir um usuário na lista
 function inserirUsuarioNaLista(usuario) {
@@ -78,4 +74,30 @@ function inserirUsuarioNaLista(usuario) {
 
     // Adiciona o item à lista de usuários no DOM
     listaUsuariosElement.appendChild(liElement);
+}
+
+// Inicializa a lista de usuários
+for (let usuario of usuarios) {
+    inserirUsuarioNaLista(usuario);
+}
+
+// Função para inserir um novo usuário na lista
+function inserirUsuario() {
+    const inputNome = document.getElementById('nome');
+    const inputIdade = document.getElementById('idade');
+    const inputCpf = document.getElementById('cpf');
+
+    const novoUsuario = {
+        nome: inputNome.value,
+        idade: parseInt(inputIdade.value),
+        cpf: inputCpf.value
+    };
+
+    // Adiciona o novo usuário na lista
+    inserirUsuarioNaLista(novoUsuario);
+
+    // Limpa os campos de entrada após adicionar
+    inputNome.value = '';
+    inputIdade.value = '';
+    inputCpf.value = '';
 }
