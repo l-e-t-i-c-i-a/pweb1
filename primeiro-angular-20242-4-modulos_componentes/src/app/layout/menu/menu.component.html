@@ -1,0 +1,10 @@
+<div class="menu">
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/cadastro-aluno']">Cadastrar Aluno</button>
+        <button mat-menu-item [routerLink]="['/listagem-alunos']">Listar Alunos</button>
+        <button mat-menu-item [routerLink]="['/listagem-cadastro-alunos']">Listar-Cadastrar Alunos</button>
+        <button mat-menu-item [routerLink]="['/cadastro-professor']">Cadastrar Professor</button>
+        <button mat-menu-item [routerLink]="['/listagem-professores']">Listar Professores</button>
+    </mat-menu>
+</div>
